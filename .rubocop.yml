@@ -1,0 +1,179 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 2.7
+  TargetRailsVersion: 6.0
+  NewCops: enable
+  Exclude:
+    - 'db/schema.rb'
+    - 'db/migrate/*'
+    - 'vendor/**/*'
+    - 'bin/bundle'
+    - 'node_modules/**/*'
+
+Capybara/FeatureMethods:
+  Enabled: false
+
+Metrics/AbcSize:
+  Exclude:
+    - 'app/admin/brand.rb'
+    - 'app/admin/set_model.rb'
+    - 'app/concepts/admin/issue_type/operation/update.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/concepts/**/*'
+    - 'spec/requests/**/*'
+    - 'app/graphql/presentedby_backend_schema.rb'
+    - 'config/environments/*'
+    - 'spec/factories/**/*'
+    - 'spec/mailers/**/*'
+    - 'spec/features/**/*'
+    - 'spec/policies/**/*'
+    - 'app/admin/**/*'
+    - 'spec/features/**/*'
+    - 'spec/support/shared_examples/view_entities_list.rb'
+    - 'spec/models/*'
+    - 'spec/structs/*'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'spec/support/graphql/query_helpers/*'
+    - 'spec/support/graphql/mutation_helpers/*'
+    - 'app/controllers/graphql_controller.rb'
+    - 'app/admin/brand.rb'
+    - 'app/admin/set_model.rb'
+    - 'app/concepts/admin/issue_type/operation/update.rb'
+
+Metrics/ModuleLength:
+  Exclude:
+    - 'spec/support/graphql/mutation_helpers/*'
+    - 'spec/support/graphql/query_helpers/*'
+
+Metrics/ParameterLists:
+  Exclude:
+    - 'app/concepts/**/operation/*'
+
+Naming/MethodName:
+  Exclude:
+    - 'app/concepts/lib/macro.rb'
+
+Layout/MultilineMethodCallIndentation:
+  Exclude:
+    - 'spec/concepts/*/operation/**/*'
+
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - 'config/initializers/devise.rb'
+    - 'spec/support/shared_examples/view_entities_list.rb'
+    - 'app/models/set_model.rb'
+    - 'spec/factories/set_models.rb'
+    - 'spec/models/set_model_spec.rb'
+    - 'spec/fixtures/**/*'
+    - 'app/models/shipping_from_address.rb'
+    - 'app/models/shipping_to_address.rb'
+    - 'app/models/address.rb'
+    - 'spec/factories/addresses.rb'
+    - 'spec/models/address_spec.rb'
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+Lint/UnreachableCode:
+  Exclude:
+    - 'app/concepts/**/*.rb'
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+  EnforcedStyle: nested
+  SupportedStyles:
+    - nested
+    - compact
+
+Style/ExponentialNotation:
+  Enabled: true
+
+Style/DisableCopsWithinSourceCodeDirective:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+Style/SignalException:
+  Exclude:
+    - 'app/concepts/**/*.rb'
+
+Style/TrailingCommaInBlockArgs:
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# RSpec cops
+RSpec/ExampleLength:
+  Exclude:
+    - 'spec/concepts/**/*'
+    - 'spec/requests/**/*'
+    - 'spec/features/**/*'
+    - 'spec/support/shared_examples/*'
+    - 'spec/models/set_model_spec.rb'
+
+RSpec/EmptyLineAfterExample:
+  Exclude:
+    - 'spec/models/*'
+
+RSpec/ImplicitSubject:
+  Exclude:
+    - 'spec/models/*'
+
+RSpec/MultipleExpectations:
+  Exclude:
+    - 'spec/concepts/**/*'
+    - 'spec/requests/**/*'
+    - 'spec/mailers/**/*'
+    - 'spec/features/**/*'
+    - 'spec/support/shared_examples/*'
+    - 'spec/policies/**/*'
+
+RSpec/NestedGroups:
+  Exclude:
+    - 'spec/models/set_model_spec.rb'
+    - 'spec/concepts/user/contract/create_shipping_address_spec.rb'
+
+RSpec/RepeatedExample:
+  Exclude:
+    - 'spec/policies/active_admin/admin_user_policy_spec.rb'
+
+RSpec/AnyInstance:
+  Exclude:
+    - 'spec/concepts/admin/issue_type/operation/update_with_issues_spec.rb'
+
+# Rails cops
+Rails/DynamicFindBy:
+  Exclude:
+    - 'spec/admin/services/*'
+
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - development
+    - test
+    - staging

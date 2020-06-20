@@ -1,0 +1,6 @@
+$('#new_comment').find(".modal-content").html("<%= j (render 'comments/form', comment: @comment) %>");
+$('#close_modal').click(function () {
+  $('.modal-backdrop').remove();
+  $('#new_comment').hide();
+});
+
