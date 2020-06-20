@@ -1,0 +1,4 @@
+{
+  "ruby.rubocop.executePath": "/Users/melky/.rvm/gems/ruby-2.6.6/wrappers/",
+  "ruby.rubocop.configFilePath": "/Users/melky/projects/rails_projects/blog/.rubocop.yml"
+}
